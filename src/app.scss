@@ -1,0 +1,61 @@
+.fannie{
+
+    @import "core/styles/colors-fannie";
+    @import "core/styles/variables";
+
+    @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+    @import "core/styles/core";
+
+    /*----- Components -----*/
+    @import "components/dashboard/dashboard";
+    @import "components/details-overlay/details-overlay";
+    @import "components/login-overlay/login-overlay";
+    @import "components/search/search";
+    @import "components/search-overlay/search-overlay";
+    @import "components/snapshot-row/snapshot-row";
+    @import "components/topnav/topnav";   
+    @import "components/footer/footer"; 
+}
+    
+
+.freddie{
+
+    @import "core/styles/colors-freddie";
+    @import "core/styles/variables";
+
+    @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+    @import "core/styles/core";
+
+    /*----- Components -----*/
+    @import "components/dashboard/dashboard";
+    @import "components/details-overlay/details-overlay";
+    @import "components/login-overlay/login-overlay";
+    @import "components/search/search";
+    @import "components/search-overlay/search-overlay";
+    @import "components/snapshot-row/snapshot-row";
+    @import "components/topnav/topnav";
+    @import "components/footer/footer";   
+}
+ 
+.ginnie{
+
+    @import "core/styles/colors-ginnie";
+    @import "core/styles/variables";
+
+    @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+    @import "core/styles/core";
+
+    /*----- Components -----*/
+    @import "components/dashboard/dashboard";
+    @import "components/details-overlay/details-overlay";
+    @import "components/login-overlay/login-overlay";
+    @import "components/search/search";
+    @import "components/search-overlay/search-overlay";
+    @import "components/snapshot-row/snapshot-row";
+    @import "components/topnav/topnav";
+    @import "components/footer/footer";   
+}   
+

@@ -1,0 +1,90 @@
+<section id="search-view" class="container disclosure-container">
+
+    <!-- Title and Search Bar -->
+    <div class="search-title-bar clearfix">
+        <span class="disclosure-title pull-left">SEARCH RESULTS</span>
+        <!-- Search Form -->
+        <span class="search-input pull-left">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <input type="text" class="form-control" ng-model="vm.searchInput" value="{{ vm.resultMsgObj.searchValue }}" ng-keypress="vm.runSearchQuery($event, vm.searchInput)">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </span>
+            </div>
+        </span>
+        <!-- Save Search -->
+        <span class="pull-right search-save-btn">
+            <button type="button" class="btn btn-primary btn-lg">SAVE SEARCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="form-chevron">></span></button>
+        </span>
+    </div>
+    
+    <!-- Information Bar -->
+    <div class="search-info-bar">
+        <!-- Results Message -->
+        <span class="search-results-msg" ng-show="!vm.searchAll">
+            {{ vm.resultMsgObj.count }} Result<span ng-show="vm.resultMsgObj.count !== 1">s</span> for {{ vm.resultMsgObj.type }} "{{ vm.resultMsgObj.searchValue }}"
+        </span>
+        <span class="search-results-msg" ng-show="vm.searchAll">
+            {{ vm.resultMsgObj.count }} Result<span ng-show="vm.resultMsgObj.count !== 1">s</span> found
+        </span>
+        <!-- Active Filters -->
+        <span class="search-active-filter">
+            <span class="glyphicon glyphicon-remove-sign"></span>
+            MBS: Single-Family
+        </span>
+        <span class="search-active-filter">
+            <span class="glyphicon glyphicon-remove-sign"></span>
+            10/1/2015
+        </span>
+    </div>
+
+    <!-- Search Column Layout -->
+    <div class="search-column-layout clearfix">
+        <!-- Filters -->
+        <div class="search-filters-column pull-left">
+            <div class="search-filters-header">FILTERS</div>
+            <div ng-repeat="filter in vm.filterData" class="search-filter-item">
+                <div class="clearfix">
+                    <span class="pull-left search-filter-name">{{ filter.name }}</span>
+                    <span class="pull-right"><i ng-class="{ 'glyphicon glyphicon-minus-sign':filter.value, 'glyphicon glyphicon-plus-sign':!filter.value }"></i></span>
+                </div>
+                <div ng-show="filter.value" class="clearfix search-filter-value-container">
+                    <span class="pull-left"><i class="glyphicon glyphicon-remove-sign"></i></span>
+                    <span class="pull-left search-filter-value">{{ filter.value }}</span>
+                </div>
+            </div>
+        </div>
+        <!-- Snapshots Table -->
+        <div class="search-snapshots-column pull-left">
+            <table class="search-snapshot-table table-bordered">
+                <thead>
+                    <tr>
+                        <th ng-repeat="title in vm.colTitles" class="search-table-dataCol">
+                            <div class="clearfix">
+                                <span class="search-table-colTitle pull-left">{{ title }}</span>
+                                <div class="search-table-colSort pull-right" ng-class="{'search-table-colSortTall': title.length >= 10}">
+                                    <div class="search-table-colSortBtn">
+                                        <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-menu-up"></span></button>
+                                    </div>
+                                    <div class="search-table-colSortBtn">
+                                        <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-menu-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                        <th class="search-snapshot-downloadHead">
+                            <img src="images/Download_White.png">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="security in vm.snapshotList" tmpl-snapshot-row security="security"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>

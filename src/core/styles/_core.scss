@@ -1,0 +1,141 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 75px;
+}
+
+/* Remove border to delete the 1px line */
+.navbar-fixed-top {
+    border: 0;
+}
+
+/* Workaround for unwanted route changes due to empty href attributes - see http://angular-ui.github.io/bootstrap/ */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// -------------------------
+// Bootstrap Non-Variable Overrides
+// -------------------------
+//
+// Modals
+// -------------------------
+.modal-content {
+    @include box-shadow(none);
+}
+@media (min-width: $screen-sm-min) {
+    // Automatically set modal's width for larger viewports
+    .modal-dialog {
+        margin-top: $topnav-height + $modal-top-margin;
+    }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    top: -2px;
+}
+//
+// Forms
+// -------------------------
+.form-control{
+    border: none;
+    padding: 10px 12px;
+}
+.btn {
+    border: none;
+    color: $brand-color-white;
+    font-weight: 100;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:focus:active {
+    background-color: $brand-color-medium;
+    color: $brand-color-white;
+}
+
+.btn.btn-secondary {
+    color: $brand-color-dark;
+    border: 1px $brand-color-dark solid;
+    background-color: $brand-color-white;
+    &:hover {
+        background-color: $brand-color-white;
+    }
+}
+
+/* Core Style Components */
+// -------------------------
+.disclosure-container {
+    padding-left:10px;
+    padding-right:10px;
+}
+.disclosure-title {
+    font-size: 36px;
+    font-weight: 300;
+    color: $brand-color-medium;
+}
+.glyphicon-rotate-up {
+    transform: rotate(-90deg);
+}
+
+// Overlay
+// -------------------------
+
+.overlay-container{
+    padding: 60px 80px;
+    font-weight: 300;
+    color: $brand-gray;
+
+    label{
+        font-weight: normal;
+    }
+
+    input {
+        font-weight: 400;
+    }
+
+    a {
+        text-decoration: underline;
+        color: $brand-color-dark;
+    }
+
+    .redirect-btn a {
+        color: $brand-color-white;
+        text-decoration: none;
+    }
+}
+
+.overlay-title{
+    font-size: 36px;
+    font-weight: 100;
+    color: $brand-color-medium;
+}
+
+.overlay-title-sm{
+    font-size: 26px;
+    font-weight: 100;
+    color: $brand-color-medium;
+}
+
+.overlay-description{
+    font-size: 16px;
+}
+
+.overlay-form-divider{
+    height: $login-form-height - $form-group-margin-bottom;
+    border-right: 1px $brand-color-dark solid;
+}
+
+.overlay-form-helper {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.btn.btn-close{
+    background-color: $brand-gray-bg;
+    color: $brand-gray-icon;
+    &:hover{
+        color: $brand-gray;
+    }
+}
+
+.overlay-form-row {
+    margin-top: 40px;
+
+    button {
+        margin-right: 15px;
+    }
+}

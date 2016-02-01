@@ -1,0 +1,191 @@
+.details-overlay-toolbar {
+    padding: 0px 4px;
+    margin-bottom: 15px;
+    color: $brand-color-medium;
+}
+
+.details-overlay-save {
+    margin-left: 15px;
+}
+
+.details-overlay-title {
+    font-size: 20px;
+}
+
+.details-tabs {
+
+    .nav-tabs {
+        border-bottom: none;
+    }
+    
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+        background-color: $brand-color-secondary;
+        color: $brand-color-medium;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 400;
+        border: 0px;
+    }
+
+    .nav-tabs > li {
+        margin-bottom: 0px;
+        width: 25%;
+        text-align: center;
+    }
+
+    .nav-tabs > li > a {
+        background-color: $brand-gray-bg;
+        text-decoration: none;
+        color: $brand-color-medium;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 400;
+        border: 0px;
+        padding: 10px 0px;
+    }
+
+    .nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
+        cursor: pointer;
+        background-color: $brand-gray-bg;
+        color: $brand-color-medium;
+    }
+
+}
+
+.details-overlay-tabs-subnav {
+    background-color: $brand-color-secondary;
+    color: $brand-color-dark;
+    font-size: 12px;
+    font-weight: 400;
+    width: calc(100% - 2px);
+
+    span {
+        padding: 5px 15px;
+        cursor: pointer;
+    }
+
+    span.active {
+        color: $brand-color-white;
+        cursor: default;
+    }
+}
+
+.details-overlay-table {
+    padding: 15px 80px 0px 80px;
+
+    &.details-overlay-table-wide {
+        padding: 15px 0px 0px 0px;
+
+        th:last-child {
+            min-width: 130px;
+        }
+    }
+
+    table{
+        width: 100%;
+
+        th {
+            color: $brand-color-dark;
+            font-size: 12px;
+            padding-bottom: 15px;
+            text-align: right;
+
+            &:first-child {
+                text-align: left;
+            }
+        }
+
+        tbody {
+
+            td {
+                padding: 5px 0px;
+                color: $brand-color-medium;
+                border-bottom: 1px $brand-color-medium solid;
+                text-align: right;
+
+                &:first-child { 
+                    text-align: left;
+                }
+            }
+
+            tr:last-child td {
+                border-bottom: 0px;
+            }
+
+        }
+    }
+}
+
+.details-overlay-table.lg-table table {
+
+    th:last-child {
+        width: 90px;
+    }
+
+}
+
+.details-overlay-fileLayout {
+    padding: 15px 80px;
+}
+
+.details-overlay-fileCol {
+    margin-right: 50px;
+    color: $brand-color-medium;
+}
+
+.details-overlay-fileColTitle {
+    color: $brand-color-dark;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.details-overlay-disclaimer {
+    margin-top: 50px;
+    font-size: 12px;
+    font-style: italic;
+    color: $brand-gray;
+}
+
+.details-overlay-fileRow {
+    margin-bottom: 5px;
+    span {
+        margin-right: 5px;
+    }
+}
+
+.details-overlay-dataFilesLayout {
+    padding: 15px 80px;
+}
+
+.details-overlay-dataFilesTitle {
+    color: #21386B;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    span {
+        margin-right: 10px;
+    }
+}
+
+.details-overlay-dataFilesList {
+    color: $brand-color-medium;
+
+    & > span {
+        margin-right: 15px;
+    }
+
+    .data-icon {
+        margin-right: 5px;
+        font-size: 16px;
+    }
+}
+
+.details-overlay-txtInfo {
+    position: absolute;
+    top: 20px;
+    left: 17px;
+    font-size: 12px;
+    width: 300px;
+    font-style: italic;
+    color: $brand-gray;
+}

@@ -1,0 +1,59 @@
+.navbar{
+	min-height:75px;
+	margin-bottom:0px;
+	border-bottom:2px solid $brand-color-dark;
+	padding-top:15px;
+    padding-bottom:12px;
+}
+.navbar-nav{
+	li{
+		font-size:18px;
+		font-weight: 300;
+		letter-spacing: .5px;
+		text-transform: uppercase;
+		a{
+			padding:24px 10px 0px 10px;
+		}
+	}
+	.welcome{
+		padding:21px 10px 0px 10px;
+		color:$brand-color-white;
+	}
+}
+
+.topnav-logo {
+	cursor: pointer;
+	span {
+		position: relative;
+		top: 18px;
+		margin-left: 5px;
+		color: white;
+		font-size: 22px;
+		font-weight: 100;
+	}
+	a, a:hover, a:focus {
+		text-decoration: none;
+	}
+}
+
+.topnav-static-link {
+	color: $brand-color-white;
+}
+
+.topnav-alert-badge {
+	position: absolute;
+	top: -32px;
+    left: 6px;
+    font-size: 10px;
+    &.badge {
+    	background-color: red
+    }
+}
+
+.topnav-welcome-msg {
+	text-transform: none;
+}
+
+.topnav-welcome-down {
+	font-size: 12px;
+}

@@ -1,0 +1,62 @@
+/* -----------------------------------------------------------------------------
+ * variables
+ * -------------------------------------------------------------------------- */
+
+/* ----- Grascale Colors ----- */
+$brand-gray: #808080;
+$brand-gray-bg: #E2E2E2;
+$brand-gray-icon: #B0B0B0;
+$brand-color-white: #FFFFFF;
+$brand-color-lightblue: #a1adc7;
+
+/* ----- Freddie Mac Colors ----- */
+
+/* ----- Sizes ----- */
+$topnav-height: 75px;
+$login-form-height: 156px;
+
+/* ----- Margins/Padding ----- */
+$modal-top-margin: 30px;
+
+// -------------------------
+// Bootstrap Overrides
+// -------------------------
+//
+// Colors
+// -------------------------
+$navbar-inverse-brand-color: $brand-color-light;
+$navbar-inverse-bg: $brand-color-medium;
+$navbar-inverse-border: $brand-color-medium;
+$navbar-inverse-link-color: $brand-color-light;
+$navbar-inverse-link-hover-color: #FFFFFF;
+$btn-primary-color: $brand-color-dark;
+
+//
+// Typography
+// -------------------------
+$font-family-sans-serif: 'Roboto', Helvetica, Arial, sans-serif;
+//
+// Sizes
+// -------------------------
+$modal-sm: 500px;
+$modal-md: 780px;
+$modal-lg: 880px;
+$container-large-desktop: 960px;
+$container-desktop: 960px;
+//
+// Forms
+// -------------------------
+$input-bg: $brand-gray-bg;
+$input-color: $brand-color-dark;
+$form-group-margin-bottom: 20px;
+//
+// Square Corners
+// -------------------------
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$input-border-radius: 0px;
+$btn-border-radius-base: 0px;
+
+
+/* ----- Typography ----- */
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;

@@ -1,0 +1,29 @@
+<td>
+    <div class="clearfix search-snapshot-cusipCol">
+        <input type="checkbox" class="pull-left">
+        <a ng-show="!vm.security.redirectFlag" ng-click="vm.openDetailsOverlay(vm.security.securityCusipId)" class="pull-left search-snapshot-cusipLink">{{ vm.security.securityCusipId }}</a>
+        <a ng-show="vm.security.redirectFlag" ng-click="vm.openRedirectOverlay()" class="pull-left search-snapshot-cusipLink">{{ vm.security.securityCusipId }}</a>
+
+    </div>
+</td>
+<td>{{ vm.security.securityStatus }}</td>
+<td>{{ vm.security.securityType }}</td>
+<td>{{ vm.security.securityPoolId }}</td>
+<td>{{ vm.security.issuanceWACoupon | number:4 }}</td>
+<td>{{ vm.security.securityIssueDate }}</td>
+<td>{{ vm.security.securityMaturitydate }}</td>
+<td class="search-snapshot-alignRight">{{ vm.security.securityIssuancebalance | currency:"$":0 }}</td>
+<td class="search-download-td" ng-class="{'active':vm.downloadBar === 'show'}">
+    <span class="snapshot-row-downloadBtn" ng-click="vm.toggleDownloadBar()"><img ng-src="{{ vm.downloadBtn }}"></span>
+    <!-- Download Bar -->
+    <div class="search-downloadBar-container">
+        <div ng-class="vm.downloadBar" class="search-downloadBar-layout">
+            <span class="pull-left search-downloadBar-text">Download CSV</span>
+            <span class="pull-left"><img src="images/Download_CSV_White.png"></span>
+            <span class="pull-left search-downloadBar-text">Download XML</span>
+            <span class="pull-left"><img src="images/Download_XML_White.png"></span>
+            <span class="pull-left search-downloadBar-text">Download Both</span>
+            <span class="pull-left"><img src="images/Download_Both_White.png"></span>
+        </div>
+    </div>
+</td>

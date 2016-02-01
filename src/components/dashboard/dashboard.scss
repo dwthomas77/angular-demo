@@ -1,0 +1,249 @@
+body{
+	overflow-x:hidden;
+}
+.dash-title {
+    color: $brand-color-dark;
+}
+
+.carousel-container{
+	background-color: $brand-color-verydark;
+	margin: 0 -9999rem;
+	padding: 0 9999rem;
+
+	.glyphicon{
+		color:$brand-color-medium;
+		font-size: 24px;
+		top:230px;
+		float:left;
+	}
+	.glyphicon-chevron-right{
+		float:right;
+	}
+	.carousel-content{
+		color: $brand-color-secondary;
+		padding:80px 60px 80px 60px;
+		h2{
+			font-size:36px;
+			font-weight:300;
+			margin:0;
+			margin-bottom: 20px;
+		}
+		p{
+			font-size:24px;
+			margin-bottom: 20px;
+			font-weight:200;
+		}
+		.more-info{
+			color:$brand-color-white;
+			font-size:14px;
+		}
+	}
+}
+
+.sub-nav-bar{
+	height:60px;
+	background-color: $brand-color-secondary;
+	margin: 0 -9999rem;
+	padding: 0 9999rem;
+	.col-md-4{
+		padding-left:20px;
+		padding-right:10px;
+	}
+	.news{
+		margin-bottom: 47px;
+	}
+	.sub-title{
+		font-family:$font-family-sans-serif;
+		color:$brand-color-white;
+		font-size: 18px;
+		font-weight: 300;
+		text-transform: uppercase;
+		height:40px;
+		border-right: 1px solid $brand-color-white;
+		margin-top:10px;
+		margin-bottom:10px;
+		padding-top:14px;
+	}
+	.column{
+		height:auto;
+		padding-top:24px;
+		h3{
+			font-size:12px;
+			color:$brand-color-medium;
+			margin-bottom:0px;
+			margin-top:0px;
+			float:left;
+			padding-right:5px;
+			font-weight:400;
+		}
+		.date{
+			font-size:12px;
+			text-transform: uppercase;
+			color:$brand-color-medium;
+			margin-top:0px;
+			margin-bottom: 20px;
+		}
+
+		.link{
+			color:$brand-color-dark;
+			font-size:12px;
+			text-decoration: underline;
+			display: inline-block;
+			margin-bottom:20px;
+		}
+
+		.issues-content, .files-content{
+			margin-bottom:20px;
+		}
+	}
+	.news{
+		.date{
+			margin-bottom:7px;
+		}
+		.column{
+			padding-right:30px;
+		}
+	}
+
+	.files{
+		.sub-title{
+			border-right:none;
+		}
+	}
+	.more-info{
+		color:$brand-color-medium;
+		font-size:12px;
+	}
+	.download-title{
+		color:$brand-color-medium;
+		font-size:14px;
+		width:80%;
+		text-transform: uppercase;
+		margin-bottom: 7px;
+		font-weight:600;
+		margin-top:0px;
+	}
+	.download-link{
+		color:$brand-color-dark;
+		font-size:12px;
+		text-decoration: underline;
+		display: inline-block;
+		float:left;
+	}
+	.login-text{
+		color:$brand-color-dark;
+		font-size:12px;
+		margin:0;
+		font-weight: 600;
+		margin-bottom: 7px;
+	}
+	.glyphicon{
+		color:$brand-color-medium;
+		padding-left:5px;
+		padding-right:5px;
+	}
+}
+
+.user-content{
+	padding-top:60px;
+	padding-left:80px;
+	height:395px;
+	.portfolios{
+		width:220px;
+		float:left;
+		margin-right: 20px;
+	}
+	.alerts{
+		width:380px;
+		float:left;
+		margin-right: 20px;
+	}
+	.user-search{
+		width:140px;
+		float:left;
+	}
+	.table-title{
+		text-transform:uppercase;
+		color:$brand-color-secondary;
+		font-size:14px;
+		font-weight: 600;
+		margin-top:0px;
+		margin-bottom:15px;
+	}
+	.user-table{
+		width: 100%;
+		text-align:right;
+		th{
+			background-color:$brand-color-medium;
+			color:$brand-color-secondary;
+			font-size:12px;
+			padding-right:7px;
+			text-transform: uppercase;
+			text-align:right;
+		}
+		.name{
+			text-align:left;
+			padding:7px;
+		}
+		td{
+			color:$brand-color-white;
+			font-size:12px;
+			padding-top:15px;
+			padding-bottom:14px;
+			padding-left:7px;
+			padding-right:7px;
+			border-bottom:1px solid $brand-color-medium;
+		}
+	}
+	
+	ul{
+		margin-bottom:0px;
+		padding-left:0px;
+		li{
+			list-style-type: none;
+			margin-bottom: 10px;
+			a{
+				text-decoration: underline;
+				color:$brand-color-white;
+				display: inline-block;
+			}
+		}
+	}
+	.saved{
+		margin-top:60px;
+	}
+	.list-title{
+		color:$brand-color-secondary;
+		margin-bottom: 20px;
+		text-transform:uppercase;
+		font-weight: 600;
+	}
+}
+
+.logged-in{
+	.files-content{
+		.unlocked{
+			width:100%;
+			margin-bottom: 7px;
+		}
+	}
+}
+
+.concept-link {
+	cursor: pointer;
+}
+
+.concept-modal {
+	background-color: $brand-color-verydark;
+	padding-bottom: 50px;
+	text-align: center;
+
+	img {
+		max-width: 1440px;
+		margin: 0px auto;
+	}
+}
+
+.user-search .recent a {
+	cursor: pointer;
+}

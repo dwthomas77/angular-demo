@@ -1,0 +1,46 @@
+.login-overlay-container{
+    padding: 60px 0px;
+    font-weight: 300;
+    color: $brand-gray;
+
+    label{
+        font-weight: normal;
+    }
+
+    input {
+        font-weight: 400;
+    }
+
+    a {
+        text-decoration: underline;
+        color: $brand-color-dark;
+    }
+}
+
+.login-title{
+    font-size: 36px;
+    font-weight: 100;
+    color: $brand-color-dark;
+}
+
+.login-description{
+    font-size: 16px;
+}
+
+.login-form-row {
+    margin-top: 40px;
+}
+
+.login-form-divider{
+    height: $login-form-height - $form-group-margin-bottom;
+    border-right: 1px $brand-color-dark solid;
+}
+
+.login-form-helper {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.login-waiver-row{
+    margin-top: 20px;
+}

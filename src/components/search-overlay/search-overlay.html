@@ -1,0 +1,151 @@
+<!-- Login View -->
+<section id="login-overlay">
+
+    <!-- Close Button -->
+    <button type="button" class="btn btn-close btn-default pull-right" ng-click="vm.close()">
+        <span class="glyphicon glyphicon-remove"></span>
+    </button>
+
+    <div class="overlay-container">
+        <!-- Search Title -->
+        <div class="overlay-title">FIND SECURITIES</div>
+
+        <!-- Search Description -->
+        <div class="overlay-description">
+            <p>Search for disclosure and related documents for similar pools or trusts using the CUSIP. Pool Number, Trust Number, Pool/Security ID, REMIC Serles # or Class ID.</p>
+        </div>
+
+
+        <!-- Search Form Container -->
+        <div class="overlay-form-row">
+
+            <!-- Form Column Layout -->
+            <div class="form-container row">
+                <!-- Search Form -->
+                <div class="col-md-7">
+                    <!-- Basic/Advanced Tabs -->
+                    <div class="search-overlay-tabs">
+                        <tabset>
+                            <tab>
+                                <!-- Basic Search -->
+                                <tab-heading>Search</tab-heading>
+                                <div class="search-tab-content">
+                                    <!-- Search Input Field -->
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </span>
+                                        <input type="text" class="form-control search-text-input" ng-model="vm.basicSearchInput" ng-keypress="vm.basicSearchQuery($event, vm.basicSearchInput)" ng-change="vm.showSearchResults()" placeholder="eg. 3078QR10 or MM/DD/YYYY">
+                                    </div>
+                                    <p class="search-overlay-helpTxt">Enter CUSIP ID or Issuance Date in the formats shown.</p>
+                                    <!-- Search Results - CUSIP -->
+                                    <div class="list-group search-results-list" ng-class="vm.basicSearchState" ng-show="vm.searchType === 'cusip'">
+                                        <div class="list-group-item search-list-header">CUSIP</div>
+                                        <div ng-repeat="cusip in vm.cusipList | filter:vm.basicSearchInput" class="list-group-item search-overlay-cusip">
+                                            <a ui-sref="search({ cusipId: cusip.securityCusipId })" ng-click="vm.close()">{{ cusip.securityCusipId }}</a>
+                                        </div>
+                                    </div>
+                                    <!-- Search Results - Date -->
+                                    <!-- <div class="list-group search-results-list" ng-class="vm.basicSearchState" ng-show="vm.searchType === 'date'">
+                                        <div class="list-group-item search-list-header">CUSIP</div>
+                                        <div ng-repeat="cusip in vm.cusipList" class="list-group-item search-overlay-cusip">
+                                            <a ui-sref="search({ cusipId: cusip.securityCusipId })" ng-click="vm.close()">{{ cusip.securityCusipId }}</a>
+                                        </div>
+                                    </div> -->
+
+                                </div>
+                            </tab>
+                            <tab>
+                                <!-- Advanced Search -->
+                                <tab-heading>Advanced Search</tab-heading>
+                                <div class="search-tab-content">
+                                    <!-- Security Type Dropdown -->
+                                    <div class="search-overlay-secType">
+                                        <!-- Security Type Toggle Row -->
+                                        <div class="clearfix">
+                                            <div class="search-overlay-secTypeTitle pull-left">Security Type</div>
+                                            <div class="search-overlay-secTypeIcon pull-right" ng-click="vm.secTypeToggle()">
+                                                <span ng-class="vm.secTypeIcon"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Security Type Dropdown -->
+                                        <div collapse="vm.secTypeToggleBool" class="clearfix search-overlay-checkbox-list">
+                                            <!-- Security Type Left List -->
+                                            <div class="pull-left form">
+                                                <div class="checkbox"><label><input type="checkbox"> MBS: Single-Family</label></div>
+                                                <div class="checkbox"><label><input type="checkbox"> Interim MBS: Single-Fam</label></div>
+                                                <div class="checkbox"><label><input type="checkbox"> DMBS: Multifamily</label></div>
+                                                <div class="checkbox"><label><input type="checkbox"> Mega</label></div>
+                                            </div>
+                                            <!-- Security Type Right List -->
+                                            <div class="pull-right">
+                                                <div class="checkbox"><label><input type="checkbox"> Preliminary Mega</label></div>
+                                                <div class="checkbox"><label><input type="checkbox"> Remic Securities</label></div>
+                                                <div class="checkbox"><label><input type="checkbox"> Grantor Trust (T, C & R Deals)</label></div>
+                                                <div class="checkbox"><label><input type="checkbox"> SMBS Securities</label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Query Builder (qb) -->
+                                    <div class="search-overlay-qbLayout clearfix">
+                                        <!-- Query Builder Column -->
+                                        <div class="search-overlay-qbCol pull-left">
+                                            <div>
+                                                <span>Criteria</span>
+                                                <span class="pull-right search-overlay-qbChevrom glyphicon glyphicon-menu-down"></span>
+                                            </div>
+                                        </div>
+                                        <div class="search-overlay-qbCol pull-left">
+                                            <span>Logic</span>
+                                            <span class="pull-right search-overlay-qbChevrom glyphicon glyphicon-menu-down"></span>
+                                        </div>
+                                        <div class="search-overlay-qbCol last pull-right">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="search-overlay-qbAddHolder">
+                                                <div class="search-overlay-qbAddBtn">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- Login Button -->
+                                    <div class="overlay-form-row clearfix">
+                                        <button type="button" class="btn btn-primary btn-lg pull-left" ng-click="vm.advSearchBtn()">SEARCH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="form-chevron">></span></button>
+                                        <button type="button" class="btn btn-secondary btn-lg pull-left">RESET &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="form-chevron">></span></button>
+                                    </div>
+                                </div>
+                            </tab>
+                        </tabset>
+                    </div>
+                </div>
+                <!-- Form Divider -->
+                <div class="col-md-1 overlay-form-divider"></div>
+                <!-- Form Helpers -->
+                <div class="col-md-4">
+                    <!-- Recent Searches -->
+                    <div class="search-overlay-storedHeader">
+                        Recent Searches
+                    </div>
+                    <div class="search-overlay-storedItems">
+                        <div class="search-overlay-recentSearch" ng-repeat="search in vm.recentSearches track by $index"><a ng-click="vm.runRecentSearch(search)">{{ search }}</a></div>
+                    </div>
+                    <!-- Saved Searches -->
+                    <div class="search-overlay-storedHeader">
+                        Saved Searches
+                    </div>
+                    <div class="search-overlay-storedItems">
+                        <div>Oct. Single Family</div>
+                        <div>MBS securities</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>

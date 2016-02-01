@@ -1,0 +1,188 @@
+<!-- Details View -->
+<section id="details-overlay">
+
+    <!-- Close Button -->
+    <button type="button" class="btn btn-close btn-default pull-right" ng-click="vm.close()">
+        <span class="glyphicon glyphicon-remove"></span>
+    </button>
+
+    <div class="overlay-container">
+
+        <!-- Details Toolbar -->
+        <div class="details-overlay-toolbar clearfix">
+            <div class="details-overlay-title pull-left">{{ vm.cusip }}</div>
+            <div class="details-overlay-save pull-right">
+                <span>Add to Portfolio</span>
+                <span class="gylphicon glyphicon glyphicon-open-file"></span>
+            </div>
+            
+            <div class="details-overlay-save pull-right">
+                <span>Export to Excel</span>
+                <span class="gylphicon glyphicon glyphicon-th-list"></span>
+            </div>
+
+        </div>
+
+        <div class="details-tabs">
+            <tabset>
+                <!-- Security Detail -->
+                <tab>
+                    <tab-heading>Security Snapshot</tab-heading>
+                    <!-- Security Detail Subnavigation -->
+                    <div class="details-overlay-tabs-subnav clearfix">
+                        <span class="pull-left">Security Basics</span>
+                        <span class="pull-left active">Weighted Averages (WA)</span>
+                        <span class="pull-left">Security Factors</span>
+                        <span class="pull-left">UPB Percentages</span>
+                    </div>
+                    <!-- Security Detail Table -->
+                    <div class="details-overlay-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Weighted Average (WA) Information</th>
+                                    <th>Issuance</th>
+                                    <th>Current</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WA Coupon</td>
+                                    <td ng-if="vm.weightedAverageList.coupon.issuance != false">{{ vm.weightedAverageList.coupon.issuance | number:4 }}</td>
+                                    <td ng-if="vm.weightedAverageList.coupon.issuance == false">—</td>
+                                    <td ng-if="vm.weightedAverageList.coupon.current != false">{{ vm.weightedAverageList.coupon.current }}</td>
+                                    <td ng-if="vm.weightedAverageList.coupon.current == false">—</td>
+                                </tr>
+                                <tr>
+                                    <td>WA Maturity</td>
+                                    <td>{{ vm.weightedAverageList.maturity.issuance }}
+                                    <td>{{ vm.weightedAverageList.maturity.current }}
+                                </tr>
+                                <tr>
+                                    <td>WA Credit Score</td>
+                                    <td>{{ vm.weightedAverageList.credit.issuance }}
+                                    <td>{{ vm.weightedAverageList.credit.current }}
+                                </tr>
+                                <tr>
+                                    <td>WA Loan To Value</td>
+                                    <td>{{ vm.weightedAverageList.ltv.issuance }}
+                                    <td>{{ vm.weightedAverageList.ltv.current }}
+                                </tr>
+                                <tr>
+                                    <td>WA Loan Age</td>
+                                    <td>{{ vm.weightedAverageList.age.issuance }}
+                                    <td>{{ vm.weightedAverageList.age.current }}
+                                </tr>
+                                <tr>
+                                    <td>WA Loan Term</td>
+                                    <td>{{ vm.weightedAverageList.term.issuance }}
+                                    <td>{{ vm.weightedAverageList.term.current }}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </tab>
+                <!-- Issuance Statistics -->
+                <tab>
+                    <tab-heading>Issuance Data</tab-heading>
+                    <!-- Issuance Statistics Subnavigation -->
+                    <div class="details-overlay-tabs-subnav clearfix">
+                        <span class="pull-left active">Quartile Distribution</span>
+                        <span class="pull-left">Origination Year Distribution</span>
+                        <span class="pull-left">Geographic Distribution</span>
+                        <span class="pull-left">Seller Information</span>
+                        <span class="pull-left">Origination Type Distribution</span>
+                    </div>
+                    <!-- Issuance Table -->
+                    <div class="details-overlay-table details-overlay-table-wide lg-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Quartile Level</th>
+                                    <th>Loan Size</th>
+                                    <th>Coupon</th>
+                                    <th>LTV</th>
+                                    <th>Credit Score</th>
+                                    <th>Loan Term</th>
+                                    <th>Loan Age</th>
+                                    <th>Months Remaining <br>To Maturity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vm.quartileList">
+                                    <td>{{ row.quartileLevel }}</td>
+                                    <td>{{ row.loanSize | currency:"$":2 }}</td>
+                                    <td>{{ row.coupon | number:4 }}</td>
+                                    <td>{{ row.ltv }}</td>
+                                    <td>{{ row.creditScore }}</td>
+                                    <td>{{ row.loanTerm }}</td>
+                                    <td>{{ row.loanAge }}</td>
+                                    <td>{{ row.monthsToMaturity }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </tab>
+                <!-- Monthly Statistics -->
+                <tab disable="true">
+                    <tab-heading>Monthly Data</tab-heading>
+                </tab>
+                <!-- Additional Disclosure -->
+                <tab>
+                    <tab-heading>Additional Disclosure</tab-heading>
+                    <!-- Security Detail Subnavigation -->
+                    <div class="details-overlay-tabs-subnav clearfix">
+                        <span class="pull-left" ng-class="{active: vm.showDocFiles}" ng-click="vm.toggleDocs('doc')">Documents</span>
+                        <span class="pull-left" ng-class="{active: vm.showDataFiles}" ng-click="vm.toggleDocs('data')">Data Files</span>
+                    </div>
+                    <!-- Documents Files -->
+                    <div class="clearfix details-overlay-fileLayout"  ng-class="{hide: !vm.showDocFiles}">
+                        <!-- Trust Documents -->
+                        <div class="pull-left details-overlay-fileCol">
+                            <div class="details-overlay-fileColTitle">Trust Documents</div>
+                            <div ng-repeat="file in vm.trustDocuments" class="clearfix">
+                                <span class="pull-left glyphicon glyphicon-file"></span>
+                                <span class="pull-left"><a href="{{ file.fileUrl }}" target="_blank">{{ file.fileName }}</a></span>
+                            </div>
+                        </div>
+                        <!-- Offering Documents -->
+                        <div class="pull-left details-overlay-fileCol">
+                            <div  class="details-overlay-fileColTitle">Offering Documents</div>
+                            <div ng-repeat="file in vm.offeringDocuments" class="clearfix details-overlay-fileRow">
+                                <span class="pull-left glyphicon glyphicon-file"></span>
+                                <span class="pull-left"><a href="{{ file.fileUrl }}" target="_blank">{{ file.fileName }}</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Data Files -->
+                    <div class="details-overlay-dataFilesLayout" ng-class="{hide: !vm.showDataFiles}">
+                        <!-- Security Info -->
+                        <div class="details-overlay-dataFilesTitle">
+                            <span>{{ vm.poolNum }}</span>
+                            <span>{{ vm.cusip }}</span>
+                        </div>
+                        <!-- Data Files Downloads -->
+                        <div class="clearfix details-overlay-dataFilesList">
+                            <span class="pull-left"><span class="glyphicon glyphicon-list-alt data-icon"></span><a href="{{ vm.dataFiles.csv.url }}" target="_blank">CSV</a></span>
+                            <span class="pull-left"><span class="glyphicon glyphicon-file data-icon"></span><a href="{{ vm.dataFiles.xml.url }}" target="_blank">XML</a></span>
+                            <span class="pull-left" style="position: relative">
+                                <span class="glyphicon glyphicon-copy data-icon"></span><a href="{{ vm.dataFiles.txt.url }}" target="_blank">{{ vm.dataFiles.txt.name }}</a>
+                                <span class="details-overlay-txtInfo">(Loan Level Disclosure-Issuance File)</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Disclaimer Text -->
+                    <div class="details-overlay-disclaimer">
+                        If the document you are looking for is unavailable, please contact the Fixed-Income Investor Helpline at 1-800-237-8627, 9:00 a.m. to 5:30 p.m., ET, every business day.
+                    </div>
+                </tab>
+
+
+
+
+        </div>
+
+        
+
+    </div>
+</section>

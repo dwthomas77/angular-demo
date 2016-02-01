@@ -1,0 +1,192 @@
+#search-view.disclosure-container {
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+.search-title-bar {
+    & .btn-lg, .btn-group-lg > .btn {
+        padding: 9px 16px;
+    }
+}
+
+.search-input {
+    width: 380px;
+    margin-left: 34px;
+    margin-top: 2px;
+
+    input {
+        height: 40px;
+        width: 100%;
+        @include box-shadow(none);
+    }
+    .input-group-addon {
+        color: $brand-gray-icon;
+        background-color: $brand-gray-bg;
+        border: none;
+    }
+    .form-control:focus {
+        border: none;
+        @include box-shadow(none);
+    }
+
+}
+
+.search-results-msg {
+    margin-right: 25px;
+    font-size: 16px;
+    color: $brand-gray-icon;
+}
+
+.search-active-filter {
+    margin-right: 20px;
+    font-size: 16px;
+    color: $brand-color-medium;
+}
+
+.search-save-btn {
+    margin-right: 20px;
+    margin-top: 2px;
+    
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:focus:active {
+        background-color: $brand-color-secondary;
+    }
+}
+
+.search-column-layout {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.search-filters-column {
+    width: 140px;
+    min-height: 350px;
+    margin-right: 20px;
+}
+
+.search-snapshots-column {
+    width: 760px;
+}
+
+.search-filters-header {
+    color: $brand-gray;
+    font-weight: 400;
+}
+
+.search-filter-item {
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px $brand-color-medium solid;
+    color: $brand-color-medium;
+
+}
+
+.search-filter-name {
+    max-width: 120px;
+}
+
+.search-filter-value-container {
+    margin-top: 20px;    
+}
+
+.search-filter-value {
+    margin-left: 5px;
+}
+
+.search-snapshot-table {
+    width: 100%;
+    
+    thead {
+        background-color: $brand-color-medium;
+    }
+    
+    th {
+        min-width: 75px;
+        font-size: 12px;
+        padding: 4px 10px;
+        color: $brand-color-white;
+        font-weight: 100;
+    }
+
+    .search-snapshot-downloadHead {
+        max-width: 44px;
+        text-align: center;
+        position: relative;
+    }
+
+    tbody {
+        a {
+            cursor: pointer;
+        }
+        td {
+            padding: 10px 4px;
+            font-size: 12px;
+            text-align: center;
+            color: $brand-color-medium;
+            &.search-snapshot-alignRight {
+                text-align: right;
+            }
+        }
+    }
+
+    &.table-bordered > thead > tr > th, &.table-bordered > thead > tr > td {
+        border-bottom: 0px;
+    }
+
+}
+
+.search-table-colSort {
+    .btn-xs, .btn-group-xs > .btn {
+        border-radius: 0px;
+        font-size: 8px;
+        padding: 0px;
+        color: $brand-color-secondary;
+    }
+    .btn-primary {
+
+    }
+
+    .btn-xs {
+
+    }
+}
+
+.search-table-dataCol:first-child {
+    .search-table-colSort {
+        .search-table-colSortBtn:last-child .btn-xs, .btn-group-xs > .btn {
+            color: $brand-color-white;
+        }
+    }
+}
+
+.search-table-colSortTall {
+    margin-top: 9px;
+}
+
+.search-table-colSortBtn {
+    line-height: .5;
+    button {
+        line-height: .5;
+    }
+}
+
+.search-table-colTitle {
+    width: calc(100% - 10px);   
+}
+
+.search-snapshot-cusipCol {
+    width: 120px;
+    font-weight: 500;
+    font-size: 14px;
+    color: $brand-color-dark;
+    padding-left: 7px;
+    input[type='checkbox'] {
+        margin-right: 6px;
+        margin-top: 2px
+    }
+}
+
+.search-download-blue {
+    text-align: center;
+}
+
+

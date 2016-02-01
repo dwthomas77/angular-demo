@@ -1,0 +1,59 @@
+<!-- Login View -->
+<section id="login-overlay">
+
+    <!-- Close Button -->
+    <button type="button" class="btn btn-close btn-default pull-right" ng-click="vm.close()">
+        <span class="glyphicon glyphicon-remove"></span>
+    </button>
+
+    <div class="overlay-container">
+        <!-- Login Title -->
+        <div class="overlay-title">LOGIN</div>
+
+        <!-- Login Description -->
+        <div class="overlay-description">
+            <p>MBSX is an easy-to-use tool that retrieves pool-level information and data on Fannie Mae MBS, Megas, SMBS, REMICs, and Grantor Trusts, as well as certain loan-level data on Fannie Mae single-family MBS.</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form-row">
+
+            <!-- Form Column Layout -->
+            <div class="form-container row">
+                <!-- Form Input Fields -->
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username (email)</label>
+                        <input type="email" class="form-control" id="loginUserInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" class="form-control" id="loginPasswordInput">
+                    </div>
+                </div>
+                <!-- Form Divider -->
+                <div class="col-md-1 overlay-form-divider"></div>
+                <!-- Form Helpers -->
+                <div class="col-md-4">
+                    <div class="login-form-helper">
+                        <a href="#">Need to Register?</a>
+                    </div>
+                    <div class="login-form-helper">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Waiver -->
+            <div class="login-waiver-row">
+                <input type="checkbox"> By checking this box, you agree to all Fannie Mae <a href="#">Terms and Conditions</a> for download.
+            </div>
+
+            <!-- Login Button -->
+            <div class="login-form-row">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="vm.userLogin()">LOGIN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="form-chevron">></span></button>
+            </div>
+
+        </div>
+    </div>
+</section>
